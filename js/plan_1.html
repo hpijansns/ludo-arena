@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recharge Plans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 plans per row */
+            gap: 30px;
+        }
+
+        .plan {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 30px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .plan-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 10px;
+        }
+
+        .plan-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 15px;
+        }
+
+        .plan-price .original-price {
+            text-decoration: line-through;
+            color: #888; /* Light grey color */
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .plan-details {
+            font-size: 16px;
+            color: #000;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        .plan-details p {
+            margin: 5px 0;
+        }
+
+        .plan button {
+            background-color: #000080; /* Navy Blue */
+            color: #ffffff;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .plan button:hover {
+            background-color: #000066;
+        }
+
+        .plan-image {
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #ff0000; /* Red color */
+            color: #ffffff;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .plans {
+                grid-template-columns: 1fr 1fr; /* 2 plans per row */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .plans {
+                grid-template-columns: 1fr; /* 1 plan per row */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Your Recharge Plan</h2>
+        <div class="plans">
+            <!-- Plan 1 -->
+            <div class="plan">
+                <div class="badge">UNLIMITED TRUE 5G DATA</div>
+                <div class="plan-title">Unlimited 5G Plan</div>
+                <div class="plan-price">
+                    <span class="original-price">₹499</span>₹199
+                </div>
+                <div class="plan-details">
+                    <p><strong>Validity:</strong> 84 days</p>
+                    <p><strong>Data:</strong> 2 GB/day</p>
+                    <p><strong>Voice:</strong> Unlimited</p>
+                    <p><strong>SMS:</strong> 100/day</p>
+                </div>
+                <div class="plan-image">
+                    <img src="https://i.imghippo.com/files/LBX4028FW.jpg" alt="Recharge Image" width="100%">
+                </div>
+                <button onclick="startPayment(199)">Recharge Now</button>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="plan">
+                <div class="badge">UNLIMITED TRUE 5G DATA</div>
+                <div class="plan-title">Unlimited 5G Plan</div>
+                <div class="plan-price">
+                    <span class="original-price">₹1299</span>₹299
+                </div>
+                <div class="plan-details">
+                    <p><strong>Validity:</strong> 120 days</p>
+                    <p><strong>Data:</strong> 2 GB/day</p>
+                    <p><strong>Voice:</strong> Unlimited</p>
+                    <p><strong>SMS:</strong> 100/day</p>
+                </div>
+                <div class="plan-image">
+                    <img src="https://i.imghippo.com/files/LBX4028FW.jpg" alt="Recharge Image" width="100%">
+                </div>
+                <button onclick="startPayment(299)">Recharge Now</button>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="plan">
+                <div class="badge">UNLIMITED TRUE 5G DATA</div>
+                <div class="plan-title">Unlimited 5G Plan</div>
+                <div class="plan-price">
+                    <span class="original-price">₹1799</span>₹499
+                </div>
+                <div class="plan-details">
+                    <p><strong>Validity:</strong> 180 days</p>
+                    <p><strong>Data:</strong> 2 GB/day</p>
+                    <p><strong>Voice:</strong> Unlimited</p>
+                    <p><strong>SMS:</strong> 100/day</p>
+                </div>
+                <div class="plan-image">
+                    <img src="https://i.imghippo.com/files/LBX4028FW.jpg" alt="Recharge Image" width="100%">
+                </div>
+                <button onclick="startPayment(499)">Recharge Now</button>
+            </div>
+
+            <!-- Plan 4 -->
+            <div class="plan">
+                <div class="badge">UNLIMITED TRUE 5G DATA</div>
+                <div class="plan-title">Unlimited 5G Plan</div>
+                <div class="plan-price">
+                    <span class="original-price">₹2499</span>₹799
+                </div>
+                <div class="plan-details">
+                    <p><strong>Validity:</strong> 240 days</p>
+                    <p><strong>Data:</strong> 3 GB/day</p>
+                    <p><strong>Voice:</strong> Unlimited</p>
+                    <p><strong>SMS:</strong> 100/day</p>
+                </div>
+                <div class="plan-image">
+                    <img src="https://i.imghippo.com/files/LBX4028FW.jpg" alt="Recharge Image" width="100%">
+                </div>
+                <button onclick="startPayment(799)">Recharge Now</button>
+            </div>
+
+            <!-- Plan 5 -->
+            <div class="plan">
+                <div class="badge">UNLIMITED TRUE 5G DATA</div>
+                <div class="plan-title">Unlimited 5G Plan</div>
+                <div class="plan-price">
+                    <span class="original-price">₹3499</span>₹999
+                </div>
+                <div class="plan-details">
+                    <p><strong>Validity:</strong> 365 days</p>
+                    <p><strong>Data:</strong> 4 GB/day</p>
+                    <p><strong>Voice:</strong> Unlimited</p>
+                    <p><strong>SMS:</strong> 100/day</p>
+                </div>
+                <div class="plan-image">
+                    <img src="https://i.imghippo.com/files/LBX4028FW.jpg" alt="Recharge Image" width="100%">
+                </div>
+                <button onclick="startPayment(999)">Recharge Now</button>
+            </div>
+
+            <!-- Plan 6 -->
+            <div class="plan">
+                <div class="badge">UNLIMITED TRUE 5G DATA</div>
+                <div class="plan-title">Unlimited 5G Plan</div>
+                <div class="plan-price">
+                    <span class="original-price">₹4999</span>₹1299
+                </div>
+                <div class="plan-details">
+                    <p><strong>Validity:</strong> 365 days</p>
+                    <p><strong>Data:</strong> 5 GB/day</p>
+                    <p><strong>Voice:</strong> Unlimited</p>
+                    <p><strong>SMS:</strong> 100/day</p>
+                </div>
+                <div class="plan-image">
+                    <img src="https://i.imghippo.com/files/LBX4028FW.jpg" alt="Recharge Image" width="100%">
+                </div>
+                <button onclick="startPayment(1299)">Recharge Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Razorpay Integration -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        function startPayment(amount) {
+            var options = {
+                "key": "rzp_live_elxzEEFkwxBLHR", // Replace with your Razorpay API key
+                "amount": amount * 100, // Amount in paise
+                "currency": "INR",
+                "name": "Recharge Payment",
+                "description": "Recharge for " + amount,
+                "handler": function (response) {
+                    alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+                },
+                "theme": {
+                    "color": "#000080"
+                }
+            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        }
+    </script>
+</body>
+</html>
