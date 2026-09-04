@@ -48,4 +48,4 @@ ludo-website/
 └── assets/
     ├── images/
     ├── icons/
-    └── sounds//
+    └── sounds/
