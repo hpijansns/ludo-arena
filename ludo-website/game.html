@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Play Ludo - Ludo Arena</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🎲 Ludo Arena</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+</header>
+
+
+<main class="game-page">
+
+    <section class="game-header">
+
+        <h1>🎲 Ludo Game</h1>
+
+        <div class="game-info">
+
+            <div>
+                Room:
+                <strong id="roomId">—</strong>
+            </div>
+
+            <div>
+                Status:
+                <strong id="gameStatus">waiting</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MULTIPLAYER PANEL -->
+
+    <section class="multiplayer-panel">
+
+        <h2>🌐 Multiplayer</h2>
+
+        <div class="room-controls">
+
+            <input
+                type="text"
+                id="roomInput"
+                placeholder="Enter Room ID"
+                maxlength="12"
+            >
+
+            <button
+                type="button"
+                onclick="createRoomFromUI()"
+            >
+                Create Room
+            </button>
+
+            <button
+                type="button"
+                onclick="joinRoomFromUI()"
+            >
+                Join Room
+            </button>
+
+        </div>
+
+
+        <div
+            id="multiplayerMessage"
+            class="multiplayer-message"
+        >
+            Connecting...
+        </div>
+
+
+        <div class="players-box">
+
+            <h3>Players</h3>
+
+            <div
+                id="playerList"
+                class="player-list"
+            >
+                <p>No players yet.</p>
+            </div>
+
+        </div>
+
+
+        <div class="multiplayer-actions">
+
+            <button
+                type="button"
+                onclick="startMultiplayerGame()"
+            >
+                ▶ Start Game
+            </button>
+
+            <button
+                type="button"
+                onclick="leaveMultiplayerRoom()"
+            >
+                🚪 Leave Room
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- LUDO BOARD -->
+
+    <section class="ludo-container">
+
+        <div
+            id="ludoBoard"
+            class="ludo-board"
+        >
+
+            <div class="home red-home">
+                <div class="token red-token"></div>
+                <div class="token red-token"></div>
+                <div class="token red-token"></div>
+                <div class="token red-token"></div>
+            </div>
+
+
+            <div class="home green-home">
+                <div class="token green-token"></div>
+                <div class="token green-token"></div>
+                <div class="token green-token"></div>
+                <div class="token green-token"></div>
+            </div>
+
+
+            <div class="home yellow-home">
+                <div class="token yellow-token"></div>
+                <div class="token yellow-token"></div>
+                <div class="token yellow-token"></div>
+                <div class="token yellow-token"></div>
+            </div>
+
+
+            <div class="home blue-home">
+                <div class="token blue-token"></div>
+                <div class="token blue-token"></div>
+                <div class="token blue-token"></div>
+                <div class="token blue-token"></div>
+            </div>
+
+
+            <div class="center-home">
+                🏆
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DICE -->
+
+    <section class="dice-section">
+
+        <div
+            id="dice"
+            class="dice"
+        >
+            🎲
+        </div>
+
+        <button
+            type="button"
+            id="rollDiceBtn"
+            onclick="multiplayerRollDice()"
+        >
+            🎲 Roll Dice
+        </button>
+
+        <p>
+            Dice:
+            <strong id="diceValue">—</strong>
+        </p>
+
+        <p>
+            Turn:
+            <strong id="turnPlayer">—</strong>
+        </p>
+
+    </section>
+
+
+    <!-- GAME MESSAGE -->
+
+    <div
+        id="gameMessage"
+        class="game-message"
+    >
+        Create or join a room to play.
+    </div>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Ludo Arena · Free Play
+    </p>
+
+</footer>
+
+
+<!-- Socket.IO -->
+
+<script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+
+
+<!-- Game Scripts -->
+
+<script src="js/ludo-engine.js"></script>
+<script src="js/game.js"></script>
+<script src="js/multiplayer.js"></script>
+
+
+<script>
+
+function createRoomFromUI() {
+
+    const input =
+        document.getElementById("roomInput");
+
+    const roomId =
+        input
+            ? input.value.trim()
+            : "";
+
+    createMultiplayerRoom(roomId);
+}
+
+
+function joinRoomFromUI() {
+
+    const input =
+        document.getElementById("roomInput");
+
+    const roomId =
+        input
+            ? input.value.trim()
+            : "";
+
+    joinMultiplayerRoom(roomId);
+}
+
+
+/*
+    Multiplayer game callbacks
+*/
+
+window.onMultiplayerDiceRolled =
+    function(dice, state) {
+
+        const diceValue =
+            document.getElementById(
+                "diceValue"
+            );
+
+        if (diceValue) {
+            diceValue.textContent =
+                dice;
+        }
+
+        const diceElement =
+            document.getElementById(
+                "dice"
+            );
+
+        if (diceElement) {
+            diceElement.textContent =
+                dice;
+        }
+
+        updateTurnPlayer(state);
+    };
+
+
+window.onMultiplayerGameUpdate =
+    function(state) {
+
+        updateTurnPlayer(state);
+
+        renderMultiplayerTokens(state);
+    };
+
+
+window.onMultiplayerGameStart =
+    function(state) {
+
+        updateTurnPlayer(state);
+
+        showGameMessage(
+            "🎮 Game started!"
+        );
+    };
+
+
+function updateTurnPlayer(state) {
+
+    const turnElement =
+        document.getElementById(
+            "turnPlayer"
+        );
+
+    if (!turnElement) {
+        return;
+    }
+
+    const player =
+        (state.players || [])
+            .find(
+                p =>
+                    p.id ===
+                    state.currentPlayerId
+            );
+
+    turnElement.textContent =
+        player
+            ? player.name
+            : "—";
+}
+
+
+function renderMultiplayerTokens(state) {
+
+    if (!state || !state.players) {
+        return;
+    }
+
+    console.log(
+        "Multiplayer state:",
+        state
+    );
+}
+
+
+function showGameMessage(message) {
+
+    const element =
+        document.getElementById(
+            "gameMessage"
+        );
+
+    if (element) {
+        element.textContent =
+            message;
+    }
+}
+
+</script>
+
+</body>
+</html>
