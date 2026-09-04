@@ -670,3 +670,102 @@
     }
 
 }
+/* =====================================================
+   FINAL VISIBILITY & MOBILE FIX
+   ===================================================== */
+
+.game-wrap {
+    color: #ffffff;
+}
+
+.game-panel,
+.game-panel h2,
+.game-panel h3,
+.turn-box,
+.turn-box strong,
+.players-box,
+.player,
+.rules {
+    color: #ffffff;
+}
+
+.game-panel h2 {
+    color: #ffffff;
+}
+
+.turn-box span {
+    color: #aeb9d4;
+}
+
+.turn-box strong {
+    color: #ffffff;
+}
+
+.players-box h3,
+.rules h3 {
+    color: #ffffff;
+}
+
+.player {
+    color: #f5f7ff;
+}
+
+.player.red-player {
+    color: #ffb3b3;
+}
+
+.player.green-player {
+    color: #b9f6c5;
+}
+
+.player.yellow-player {
+    color: #fff3a6;
+}
+
+.player.blue-player {
+    color: #a9d7ff;
+}
+
+.game-message {
+    color: #e8edff;
+}
+
+/* Roll button clearly visible */
+.roll-btn {
+    color: #111827;
+    background: #ffffff;
+    font-weight: 700;
+}
+
+/* Game title */
+.game-panel h2 {
+    text-shadow: 0 2px 8px rgba(0,0,0,.35);
+}
+
+/* Mobile board spacing */
+@media (max-width: 700px) {
+    .game-wrap {
+        gap: 12px;
+        padding: 10px 6px 25px;
+    }
+
+    .board-section {
+        width: 100%;
+    }
+
+    .board {
+        width: 96vw;
+        max-width: 600px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 430px) {
+    .game-panel {
+        width: 96vw;
+    }
+
+    .board {
+        width: 96vw;
+    }
+}
