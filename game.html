@@ -2,26 +2,46 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="theme-color" content="#111827">
+    <meta
+        name="theme-color"
+        content="#111827"
+    >
 
     <title>Play Ludo - Ludo Arena</title>
 
+
     <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 
     <!-- Game CSS -->
-    <link rel="stylesheet" href="css/game.css">
+
+    <link
+        rel="stylesheet"
+        href="css/game.css"
+    >
 
 </head>
 
+
 <body>
 
-    <!-- ================= HEADER ================= -->
+
+    <!-- =================================================
+         HEADER
+         ================================================= -->
 
     <header class="site-header">
 
@@ -29,21 +49,28 @@
             🎲 Ludo Arena
         </div>
 
+
         <nav class="main-nav">
 
             <a href="index.html">
                 🏠 Home
             </a>
 
+
             <a href="leaderboard.html">
                 🏆 Leaderboard
             </a>
+
 
             <a href="profile.html">
                 👤 Profile
             </a>
 
-            <a href="index.html" class="exit-btn">
+
+            <a
+                href="index.html"
+                class="exit-btn"
+            >
                 🚪 Exit
             </a>
 
@@ -52,18 +79,25 @@
     </header>
 
 
-    <!-- ================= MAIN GAME ================= -->
+
+    <!-- =================================================
+         MAIN GAME AREA
+         ================================================= -->
 
     <main class="game-wrap">
 
 
-        <!-- ================= GAME PANEL ================= -->
+        <!-- =================================================
+             LEFT GAME PANEL
+             ================================================= -->
 
         <aside class="game-panel">
+
 
             <h2>
                 🎮 Ludo Game
             </h2>
+
 
 
             <!-- CURRENT TURN -->
@@ -74,11 +108,13 @@
                     Current Turn
                 </span>
 
+
                 <strong id="turn">
                     🔴 Red's Turn
                 </strong>
 
             </div>
+
 
 
             <!-- DICE -->
@@ -92,6 +128,7 @@
             </div>
 
 
+
             <!-- ROLL BUTTON -->
 
             <button
@@ -101,6 +138,7 @@
             >
                 🎲 Roll Dice
             </button>
+
 
 
             <!-- GAME MESSAGE -->
@@ -113,7 +151,10 @@
             </div>
 
 
-            <!-- PLAYERS -->
+
+            <!-- =================================================
+                 PLAYERS
+                 ================================================= -->
 
             <div class="players">
 
@@ -121,30 +162,20 @@
                     👥 Players
                 </h3>
 
+
                 <div id="players">
 
-                    <div class="player red-player">
-                        🔴 <span>Red</span>
-                    </div>
-
-                    <div class="player green-player">
-                        🟢 <span>Green</span>
-                    </div>
-
-                    <div class="player yellow-player">
-                        🟡 <span>Yellow</span>
-                    </div>
-
-                    <div class="player blue-player">
-                        🔵 <span>Blue</span>
-                    </div>
+                    <!-- JavaScript will create players -->
 
                 </div>
 
             </div>
 
 
-            <!-- RULES -->
+
+            <!-- =================================================
+                 RULES
+                 ================================================= -->
 
             <div class="rules">
 
@@ -152,20 +183,24 @@
                     📜 Rules
                 </h3>
 
+
                 <ul>
 
                     <li>
                         Roll a 6 to bring a token out.
                     </li>
 
+
                     <li>
-                        Move your token according to
-                        the dice number.
+                        Move your token according
+                        to the dice number.
                     </li>
+
 
                     <li>
                         Capture opponent tokens.
                     </li>
+
 
                     <li>
                         Reach the center before others.
@@ -178,243 +213,23 @@
         </aside>
 
 
-        <!-- ================= BOARD ================= -->
+
+        <!-- =================================================
+             LUDO BOARD
+             ================================================= -->
 
         <section class="board-section">
+
 
             <div class="board-title">
                 🎲 Ludo Board
             </div>
 
-            <!-- JavaScript will generate board here -->
 
-            <div
-                id="board"
-                class="board"
-                aria-label="Ludo Board"
-            >
-            </div>
-
-
-            <!-- MOBILE CONTROLS -->
-
-            <div class="mobile-controls">
-
-                <button
-                    id="mobile-roll"
-                    class="btn"
-                    type="button"
-                >
-                    🎲 Roll Dice
-                </button>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <p>
-            © 2026 Ludo Arena · Free Play
-        </p>
-
-    </footer>
-
-
-    <!-- ================= JAVASCRIPT ================= -->
-
-    <!-- Ludo Engine -->
-    <script src="js/ludo-engine.js"></script>
-
-    <!-- Board Generator -->
-    <script src="js/board.js"></script>
-
-    <!-- Dice -->
-    <script src="js/dice.js"></script>
-
-    <!-- Game Controller -->
-    <script src="js/game.js"></script>
-
-
-    <!-- ================= BASIC SAFETY CHECK ================= -->
-
-    <script>
-
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const board = document.getElementById("board");
-
-            if (!board) {
-                console.error("Ludo board element not found.");
-                return;
-            }
-
-            console.log("Ludo Arena game page loaded.");
-
-        });
-
-    </script>
-
-</body>
-
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="theme-color" content="#111827">
-
-    <title>Play Ludo - Ludo Arena</title>
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/game.css">
-
-</head>
-
-<body>
-
-    <!-- HEADER -->
-
-    <header class="site-header">
-
-        <div class="logo">
-            🎲 Ludo Arena
-        </div>
-
-        <nav class="main-nav">
-
-            <a href="index.html">
-                🏠 Home
-            </a>
-
-            <a href="leaderboard.html">
-                🏆 Leaderboard
-            </a>
-
-            <a href="profile.html">
-                👤 Profile
-            </a>
-
-            <a href="index.html" class="exit-btn">
-                🚪 Exit
-            </a>
-
-        </nav>
-
-    </header>
-
-
-    <!-- GAME -->
-
-    <main class="game-wrap">
-
-        <aside class="game-panel">
-
-            <h2>
-                🎮 Ludo Game
-            </h2>
-
-
-            <div class="turn-box">
-
-                <span>
-                    Current Turn
-                </span>
-
-                <strong id="turn">
-                    🔴 Red's Turn
-                </strong>
-
-            </div>
-
-
-            <div
-                id="dice"
-                class="dice"
-                aria-label="Dice"
-            >
-                🎲
-            </div>
-
-
-            <button
-                id="roll"
-                class="btn roll-btn"
-                type="button"
-            >
-                🎲 Roll Dice
-            </button>
-
-
-            <div
-                id="message"
-                class="game-message"
-            >
-                Roll the dice to start.
-            </div>
-
-
-            <div class="players">
-
-                <h3>
-                    👥 Players
-                </h3>
-
-                <div id="players"></div>
-
-            </div>
-
-
-            <div class="rules">
-
-                <h3>
-                    📜 Rules
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Roll a 6 to bring a token out.
-                    </li>
-
-                    <li>
-                        Move your token according to
-                        the dice number.
-                    </li>
-
-                    <li>
-                        Capture opponent tokens.
-                    </li>
-
-                    <li>
-                        Reach the center before others.
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </aside>
-
-
-        <!-- BOARD -->
-
-        <section class="board-section">
-
-            <div class="board-title">
-                🎲 Ludo Board
-            </div>
+            <!--
+                JavaScript creates
+                the complete 15 × 15 board.
+            -->
 
             <div
                 id="board"
@@ -423,6 +238,11 @@
             ></div>
 
 
+
+            <!-- =================================================
+                 MOBILE ROLL BUTTON
+                 ================================================= -->
+
             <div class="mobile-controls">
 
                 <button
@@ -440,6 +260,11 @@
     </main>
 
 
+
+    <!-- =================================================
+         FOOTER
+         ================================================= -->
+
     <footer>
 
         <p>
@@ -449,12 +274,18 @@
     </footer>
 
 
-    <!-- IMPORTANT:
-         Game.js is now completely standalone.
-         Other game JS files are NOT loaded here.
-    -->
+
+    <!-- =================================================
+         GAME JAVASCRIPT
+         
+         IMPORTANT:
+         Only game.js is loaded here.
+         Do NOT load ludo-engine.js,
+         board.js or dice.js on this page.
+         ================================================= -->
 
     <script src="js/game.js?v=20260904"></script>
+
 
 </body>
 
