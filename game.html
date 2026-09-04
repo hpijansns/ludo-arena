@@ -263,3 +263,199 @@
 </body>
 
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#111827">
+
+    <title>Play Ludo - Ludo Arena</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="logo">
+            🎲 Ludo Arena
+        </div>
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                🏠 Home
+            </a>
+
+            <a href="leaderboard.html">
+                🏆 Leaderboard
+            </a>
+
+            <a href="profile.html">
+                👤 Profile
+            </a>
+
+            <a href="index.html" class="exit-btn">
+                🚪 Exit
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- GAME -->
+
+    <main class="game-wrap">
+
+        <aside class="game-panel">
+
+            <h2>
+                🎮 Ludo Game
+            </h2>
+
+
+            <div class="turn-box">
+
+                <span>
+                    Current Turn
+                </span>
+
+                <strong id="turn">
+                    🔴 Red's Turn
+                </strong>
+
+            </div>
+
+
+            <div
+                id="dice"
+                class="dice"
+                aria-label="Dice"
+            >
+                🎲
+            </div>
+
+
+            <button
+                id="roll"
+                class="btn roll-btn"
+                type="button"
+            >
+                🎲 Roll Dice
+            </button>
+
+
+            <div
+                id="message"
+                class="game-message"
+            >
+                Roll the dice to start.
+            </div>
+
+
+            <div class="players">
+
+                <h3>
+                    👥 Players
+                </h3>
+
+                <div id="players"></div>
+
+            </div>
+
+
+            <div class="rules">
+
+                <h3>
+                    📜 Rules
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Roll a 6 to bring a token out.
+                    </li>
+
+                    <li>
+                        Move your token according to
+                        the dice number.
+                    </li>
+
+                    <li>
+                        Capture opponent tokens.
+                    </li>
+
+                    <li>
+                        Reach the center before others.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </aside>
+
+
+        <!-- BOARD -->
+
+        <section class="board-section">
+
+            <div class="board-title">
+                🎲 Ludo Board
+            </div>
+
+            <div
+                id="board"
+                class="board"
+                aria-label="Ludo Board"
+            ></div>
+
+
+            <div class="mobile-controls">
+
+                <button
+                    id="mobile-roll"
+                    class="btn"
+                    type="button"
+                >
+                    🎲 Roll Dice
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Ludo Arena · Free Play
+        </p>
+
+    </footer>
+
+
+    <!-- IMPORTANT:
+         Game.js is now completely standalone.
+         Other game JS files are NOT loaded here.
+    -->
+
+    <script src="js/game.js?v=20260904"></script>
+
+</body>
+
+</html>
