@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Leaderboard - Ludo Arena</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            🎲 Ludo Arena
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="game.html">Play</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= LEADERBOARD ================= -->
+
+    <main class="leaderboard-page">
+
+        <div class="leaderboard-card">
+
+            <div class="trophy">
+                🏆
+            </div>
+
+            <h1>
+                Leaderboard
+            </h1>
+
+            <p class="leaderboard-subtitle">
+                Top Ludo players
+            </p>
+
+
+            <!-- Top 3 -->
+
+            <div class="top-three">
+
+                <div class="rank second">
+                    <div class="rank-avatar">
+                        🥈
+                    </div>
+
+                    <strong>
+                        Player 2
+                    </strong>
+
+                    <span>
+                        85 Wins
+                    </span>
+                </div>
+
+
+                <div class="rank first">
+                    <div class="rank-avatar">
+                        🥇
+                    </div>
+
+                    <strong>
+                        Player 1
+                    </strong>
+
+                    <span>
+                        120 Wins
+                    </span>
+                </div>
+
+
+                <div class="rank third">
+                    <div class="rank-avatar">
+                        🥉
+                    </div>
+
+                    <strong>
+                        Player 3
+                    </strong>
+
+                    <span>
+                        70 Wins
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- Player List -->
+
+            <div
+                id="leaderboardList"
+                class="leaderboard-list"
+            >
+
+                <div class="leader-row">
+
+                    <span class="rank-number">
+                        #4
+                    </span>
+
+                    <span class="player-name">
+                        Player 4
+                    </span>
+
+                    <strong>
+                        62 Wins
+                    </strong>
+
+                </div>
+
+
+                <div class="leader-row">
+
+                    <span class="rank-number">
+                        #5
+                    </span>
+
+                    <span class="player-name">
+                        Player 5
+                    </span>
+
+                    <strong>
+                        55 Wins
+                    </strong>
+
+                </div>
+
+
+                <div class="leader-row">
+
+                    <span class="rank-number">
+                        #6
+                    </span>
+
+                    <span class="player-name">
+                        Player 6
+                    </span>
+
+                    <strong>
+                        49 Wins
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Current Player -->
+
+            <div
+                id="currentPlayer"
+                class="current-player"
+            >
+
+                👤 You: Guest
+                <strong>
+                    0 Wins
+                </strong>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="leaderboard-actions">
+
+                <a
+                    href="game.html"
+                    class="btn"
+                >
+                    🎲 Play Ludo
+                </a>
+
+                <a
+                    href="index.html"
+                    class="btn secondary"
+                >
+                    🏠 Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Ludo Arena · Free Play
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/leaderboard.js"></script>
+
+</body>
+
+</html>

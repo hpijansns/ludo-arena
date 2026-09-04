@@ -3,375 +3,232 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Play Ludo - Ludo Arena</title>
 
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Game CSS -->
     <link rel="stylesheet" href="css/game.css">
-    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-<header>
-    <div class="logo">🎲 Ludo Arena</div>
+    <!-- ================= HEADER ================= -->
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="leaderboard.html">Leaderboard</a>
-    </nav>
-</header>
+    <header>
+
+        <div class="logo">
+            🎲 Ludo Arena
+        </div>
+
+        <nav>
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="leaderboard.html">
+                🏆 Leaderboard
+            </a>
+
+            <a href="profile.html">
+                👤 Profile
+            </a>
+
+            <a href="index.html" class="exit-btn">
+                Exit
+            </a>
+        </nav>
+
+    </header>
 
 
-<main class="game-page">
+    <!-- ================= GAME AREA ================= -->
 
-    <section class="game-header">
+    <main class="game-wrap">
 
-        <h1>🎲 Ludo Game</h1>
 
-        <div class="game-info">
+        <!-- ================= LEFT PANEL ================= -->
 
-            <div>
-                Room:
-                <strong id="roomId">—</strong>
+        <aside class="game-panel">
+
+            <h2>
+                🎮 Ludo Game
+            </h2>
+
+
+            <!-- Current Turn -->
+
+            <div class="turn-box">
+
+                <span>
+                    Current Turn
+                </span>
+
+                <strong id="turn">
+                    Red's Turn
+                </strong>
+
             </div>
 
-            <div>
-                Status:
-                <strong id="gameStatus">waiting</strong>
-            </div>
 
-        </div>
-
-    </section>
-
-
-    <!-- MULTIPLAYER PANEL -->
-
-    <section class="multiplayer-panel">
-
-        <h2>🌐 Multiplayer</h2>
-
-        <div class="room-controls">
-
-            <input
-                type="text"
-                id="roomInput"
-                placeholder="Enter Room ID"
-                maxlength="12"
-            >
-
-            <button
-                type="button"
-                onclick="createRoomFromUI()"
-            >
-                Create Room
-            </button>
-
-            <button
-                type="button"
-                onclick="joinRoomFromUI()"
-            >
-                Join Room
-            </button>
-
-        </div>
-
-
-        <div
-            id="multiplayerMessage"
-            class="multiplayer-message"
-        >
-            Connecting...
-        </div>
-
-
-        <div class="players-box">
-
-            <h3>Players</h3>
+            <!-- Dice -->
 
             <div
-                id="playerList"
-                class="player-list"
+                class="dice"
+                id="dice"
+                aria-label="Dice"
             >
-                <p>No players yet.</p>
+                🎲
             </div>
 
-        </div>
 
-
-        <div class="multiplayer-actions">
+            <!-- Roll Button -->
 
             <button
+                id="roll"
+                class="btn roll-btn"
                 type="button"
-                onclick="startMultiplayerGame()"
             >
-                ▶ Start Game
+                🎲 Roll Dice
             </button>
 
-            <button
-                type="button"
-                onclick="leaveMultiplayerRoom()"
+
+            <!-- Game Message -->
+
+            <div
+                id="message"
+                class="game-message"
             >
-                🚪 Leave Room
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- LUDO BOARD -->
-
-    <section class="ludo-container">
-
-        <div
-            id="ludoBoard"
-            class="ludo-board"
-        >
-
-            <div class="home red-home">
-                <div class="token red-token"></div>
-                <div class="token red-token"></div>
-                <div class="token red-token"></div>
-                <div class="token red-token"></div>
+                Roll the dice to start.
             </div>
 
 
-            <div class="home green-home">
-                <div class="token green-token"></div>
-                <div class="token green-token"></div>
-                <div class="token green-token"></div>
-                <div class="token green-token"></div>
+            <!-- Players -->
+
+            <div class="players-box">
+
+                <h3>
+                    Players
+                </h3>
+
+                <div id="players">
+
+                    <div class="player red-player">
+                        🔴 Red
+                    </div>
+
+                    <div class="player green-player">
+                        🟢 Green
+                    </div>
+
+                    <div class="player yellow-player">
+                        🟡 Yellow
+                    </div>
+
+                    <div class="player blue-player">
+                        🔵 Blue
+                    </div>
+
+                </div>
+
             </div>
 
 
-            <div class="home yellow-home">
-                <div class="token yellow-token"></div>
-                <div class="token yellow-token"></div>
-                <div class="token yellow-token"></div>
-                <div class="token yellow-token"></div>
+            <!-- Game Rules -->
+
+            <div class="rules">
+
+                <h3>
+                    📜 Rules
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Roll a 6 to bring a token out.
+                    </li>
+
+                    <li>
+                        Move your token according to
+                        the dice number.
+                    </li>
+
+                    <li>
+                        Capture opponent tokens.
+                    </li>
+
+                    <li>
+                        Reach the center before others.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= LUDO BOARD ================= -->
+
+        <section class="board-section">
+
+            <div
+                id="board"
+                class="board"
+                aria-label="Ludo Board"
+            >
+                <!--
+                    Board cells will be generated
+                    automatically by JavaScript.
+                -->
             </div>
 
 
-            <div class="home blue-home">
-                <div class="token blue-token"></div>
-                <div class="token blue-token"></div>
-                <div class="token blue-token"></div>
-                <div class="token blue-token"></div>
+            <!-- Mobile Controls -->
+
+            <div class="mobile-controls">
+
+                <button
+                    id="mobile-roll"
+                    class="btn"
+                    type="button"
+                >
+                    🎲 Roll
+                </button>
+
             </div>
 
+        </section>
 
-            <div class="center-home">
-                🏆
-            </div>
-
-        </div>
-
-    </section>
+    </main>
 
 
-    <!-- DICE -->
+    <!-- ================= FOOTER ================= -->
 
-    <section class="dice-section">
-
-        <div
-            id="dice"
-            class="dice"
-        >
-            🎲
-        </div>
-
-        <button
-            type="button"
-            id="rollDiceBtn"
-            onclick="multiplayerRollDice()"
-        >
-            🎲 Roll Dice
-        </button>
+    <footer>
 
         <p>
-            Dice:
-            <strong id="diceValue">—</strong>
-        </p>
-
-        <p>
-            Turn:
-            <strong id="turnPlayer">—</strong>
-        </p>
-
-    </section>
+            © 2026 Ludo Arena · Free Play
+        </p> 
+      
+    </footer>
 
 
-    <!-- GAME MESSAGE -->
+    <!-- ================= JAVASCRIPT ================= -->
 
-    <div
-        id="gameMessage"
-        class="game-message"
-    >
-        Create or join a room to play.
-    </div>
+    <!-- Ludo game engine -->
+    <script src="js/ludo-engine.js"></script>
 
-</main>
-
-
-<footer>
-
-    <p>
-        © 2026 Ludo Arena · Free Play
-    </p>
-
-</footer>
-
-
-<!-- Socket.IO -->
-
-<script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
-
-
-<!-- Game Scripts -->
-
-<script src="js/ludo-engine.js"></script>
-<script src="js/game.js"></script>
-<script src="js/multiplayer.js"></script>
-
-
-<script>
-
-function createRoomFromUI() {
-
-    const input =
-        document.getElementById("roomInput");
-
-    const roomId =
-        input
-            ? input.value.trim()
-            : "";
-
-    createMultiplayerRoom(roomId);
-}
-
-
-function joinRoomFromUI() {
-
-    const input =
-        document.getElementById("roomInput");
-
-    const roomId =
-        input
-            ? input.value.trim()
-            : "";
-
-    joinMultiplayerRoom(roomId);
-}
-
-
-/*
-    Multiplayer game callbacks
-*/
-
-window.onMultiplayerDiceRolled =
-    function(dice, state) {
-
-        const diceValue =
-            document.getElementById(
-                "diceValue"
-            );
-
-        if (diceValue) {
-            diceValue.textContent =
-                dice;
-        }
-
-        const diceElement =
-            document.getElementById(
-                "dice"
-            );
-
-        if (diceElement) {
-            diceElement.textContent =
-                dice;
-        }
-
-        updateTurnPlayer(state);
-    };
-
-
-window.onMultiplayerGameUpdate =
-    function(state) {
-
-        updateTurnPlayer(state);
-
-        renderMultiplayerTokens(state);
-    };
-
-
-window.onMultiplayerGameStart =
-    function(state) {
-
-        updateTurnPlayer(state);
-
-        showGameMessage(
-            "🎮 Game started!"
-        );
-    };
-
-
-function updateTurnPlayer(state) {
-
-    const turnElement =
-        document.getElementById(
-            "turnPlayer"
-        );
-
-    if (!turnElement) {
-        return;
-    }
-
-    const player =
-        (state.players || [])
-            .find(
-                p =>
-                    p.id ===
-                    state.currentPlayerId
-            );
-
-    turnElement.textContent =
-        player
-            ? player.name
-            : "—";
-}
-
-
-function renderMultiplayerTokens(state) {
-
-    if (!state || !state.players) {
-        return;
-    }
-
-    console.log(
-        "Multiplayer state:",
-        state
-    );
-}
-
-
-function showGameMessage(message) {
-
-    const element =
-        document.getElementById(
-            "gameMessage"
-        );
-
-    if (element) {
-        element.textContent =
-            message;
-    }
-}
-
-</script>
+    <!-- Game controller -->
+    <script src="js/game.js"></script>
 
 </body>
+
 </html>

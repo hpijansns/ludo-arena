@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Profile - Ludo Arena</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            🎲 Ludo Arena
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="game.html">Play</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= PROFILE ================= -->
+
+    <main class="profile-page">
+
+        <div class="profile-card">
+
+            <!-- Avatar -->
+
+            <div class="profile-avatar">
+                👤
+            </div>
+
+
+            <!-- Player Name -->
+
+            <h1 id="profileName">
+                Guest
+            </h1>
+
+            <p class="profile-status">
+                🎮 Ludo Player
+            </p>
+
+
+            <!-- Statistics -->
+
+            <div class="stats-grid">
+
+                <div class="stat-box">
+
+                    <span class="stat-icon">
+                        🎮
+                    </span>
+
+                    <strong id="games">
+                        0
+                    </strong>
+
+                    <small>
+                        Games
+                    </small>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <span class="stat-icon">
+                        🏆
+                    </span>
+
+                    <strong id="wins">
+                        0
+                    </strong>
+
+                    <small>
+                        Wins
+                    </small>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <span class="stat-icon">
+                        ⭐
+                    </span>
+
+                    <strong id="points">
+                        0
+                    </strong>
+
+                    <small>
+                        Points
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Profile Actions -->
+
+            <div class="profile-actions">
+
+                <a
+                    href="game.html"
+                    class="btn"
+                >
+                    🎲 Play Ludo
+                </a>
+
+                <a
+                    href="leaderboard.html"
+                    class="btn secondary"
+                >
+                    🏆 Leaderboard
+                </a>
+
+                <a
+                    href="wallet.html"
+                    class="btn secondary"
+                >
+                    💰 Wallet
+                </a>
+
+            </div>
+
+
+            <!-- Logout -->
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+                type="button"
+            >
+                🚪 Logout
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Ludo Arena · Free Play
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>
