@@ -1,0 +1,370 @@
+/* =========================================
+   LUDO ARENA - MULTIPLAYER STYLE
+   ========================================= */
+
+.multiplayer-container {
+    width: min(1100px, 94%);
+    margin: 30px auto;
+}
+
+/* =========================
+   MULTIPLAYER HEADER
+   ========================= */
+
+.multiplayer-header {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.multiplayer-title {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.connection-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.connection-status.online {
+    background: #dff9e9;
+    color: #087f3e;
+}
+
+.connection-status.offline {
+    background: #ffe2e0;
+    color: #a82419;
+}
+
+.connection-dot {
+    width: 9px;
+    height: 9px;
+    background: currentColor;
+    border-radius: 50%;
+}
+
+/* =========================
+   ROOM PANEL
+   ========================= */
+
+.room-panel {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+.room-panel h2 {
+    margin-bottom: 18px;
+}
+
+.room-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.room-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    padding: 12px 18px;
+    background: #f1f2f6;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+/* =========================
+   PLAYER LIST
+   ========================= */
+
+.player-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.player-card {
+    background: white;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.player-card.active {
+    border-color: #6c5ce7;
+}
+
+.player-avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #6c5ce7;
+    color: white;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.player-name {
+    font-weight: 700;
+}
+
+.player-status {
+    color: #718093;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* =========================
+   CHAT
+   ========================= */
+
+.multiplayer-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+}
+
+.chat-box {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.chat-header {
+    padding: 16px 18px;
+    background: #2f3640;
+    color: white;
+    font-weight: 700;
+}
+
+.chat-messages {
+    height: 300px;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    margin-bottom: 12px;
+}
+
+.chat-message .name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #6c5ce7;
+}
+
+.chat-message .text {
+    background: #f1f2f6;
+    padding: 8px 11px;
+    border-radius: 9px;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 14px;
+}
+
+.chat-input button {
+    background: #6c5ce7;
+    color: white;
+    padding: 0 20px;
+}
+
+/* =========================
+   GAME ROOM
+   ========================= */
+
+.game-room {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.turn-indicator {
+    text-align: center;
+    background: #6c5ce7;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.waiting-message {
+    text-align: center;
+    padding: 35px 15px;
+    color: #718093;
+}
+
+.waiting-message .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   ONLINE PLAYERS
+   ========================= */
+
+.online-players {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.online-player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #f5f6fa;
+    border-radius: 10px;
+}
+
+.online-player .avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #6c5ce7;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* =========================
+   ROOM MODAL
+   ========================= */
+
+.room-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 2000;
+}
+
+.room-modal.active {
+    display: flex;
+}
+
+.room-modal-content {
+    width: min(450px, 100%);
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.room-modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.room-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* =========================
+   NOTIFICATION
+   ========================= */
+
+.game-notification {
+    position: fixed;
+    top: 85px;
+    right: 20px;
+    max-width: 320px;
+    background: white;
+    padding: 15px 18px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    z-index: 3000;
+    animation: slideIn 0.25s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 800px) {
+    .multiplayer-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .player-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .multiplayer-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .player-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .room-actions {
+        flex-direction: column;
+    }
+
+    .room-actions .btn {
+        width: 100%;
+    }
+
+    .chat-messages {
+        height: 250px;
+    }
+}

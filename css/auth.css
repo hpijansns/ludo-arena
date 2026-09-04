@@ -1,0 +1,901 @@
+/* =====================================================
+   LUDO ARENA - AUTH / PROFILE / WALLET STYLE
+   ===================================================== */
+
+
+/* =====================================================
+   AUTH PAGE
+   ===================================================== */
+
+.auth-page {
+    min-height: calc(100vh - 115px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 15px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #29365a,
+            #101526 65%
+        );
+}
+
+
+/* =====================================================
+   AUTH CARD
+   ===================================================== */
+
+.auth-card {
+    width: min(100%, 430px);
+
+    padding: 30px;
+
+    background: #191f34;
+
+    border: 1px solid #303956;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+
+    text-align: center;
+}
+
+.auth-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 15px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #29334f;
+
+    font-size: 38px;
+}
+
+.auth-card h1 {
+    margin-bottom: 7px;
+
+    font-size: 30px;
+}
+
+.auth-subtitle {
+    margin-bottom: 25px;
+
+    color: #929db7;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   FORM
+   ===================================================== */
+
+#loginForm,
+#registerForm {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #d7dced;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #39435f;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #0f1424;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #65708c;
+}
+
+.form-group input:focus {
+    border-color: #ffca28;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 202, 40, 0.1);
+}
+
+
+/* =====================================================
+   REMEMBER ROW
+   ===================================================== */
+
+.remember-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 5px 0 18px;
+
+    font-size: 12px;
+
+    color: #9ca7c0;
+}
+
+.remember-row label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+}
+
+.remember-row input {
+    accent-color: #ffca28;
+}
+
+.remember-row a {
+    color: #ffca28;
+}
+
+
+/* =====================================================
+   TERMS
+   ===================================================== */
+
+.terms {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin: 8px 0 18px;
+
+    color: #9ca7c0;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    cursor: pointer;
+}
+
+.terms input {
+    margin-top: 2px;
+
+    accent-color: #ffca28;
+}
+
+
+/* =====================================================
+   AUTH BUTTON
+   ===================================================== */
+
+.auth-btn {
+    width: 100%;
+
+    margin-top: 3px;
+}
+
+
+/* =====================================================
+   AUTH MESSAGE
+   ===================================================== */
+
+.auth-message {
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+    color: #ffca28;
+}
+
+
+/* =====================================================
+   AUTH FOOTER
+   ===================================================== */
+
+.auth-footer {
+    margin-top: 20px;
+
+    color: #8f9ab4;
+
+    font-size: 13px;
+}
+
+.auth-footer a {
+    color: #ffca28;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   GUEST LINK
+   ===================================================== */
+
+.guest-link {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #9ca7c0;
+
+    font-size: 12px;
+
+    text-decoration: underline;
+}
+
+.guest-link:hover {
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   PROFILE PAGE
+   ===================================================== */
+
+.profile-page {
+    min-height: calc(100vh - 115px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 15px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #29365a,
+            #101526 65%
+        );
+}
+
+.profile-card {
+    width: min(100%, 620px);
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #191f34;
+
+    border: 1px solid #303956;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 15px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #29334f;
+
+    font-size: 45px;
+}
+
+.profile-card h1 {
+    margin-bottom: 5px;
+}
+
+.profile-status {
+    color: #929db7;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   PROFILE STATS
+   ===================================================== */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin: 25px 0;
+}
+
+.stat-box {
+    padding: 17px 10px;
+
+    border-radius: 13px;
+
+    background: #11172a;
+
+    border: 1px solid #2d3651;
+}
+
+.stat-icon {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 24px;
+}
+
+.stat-box strong {
+    display: block;
+
+    font-size: 22px;
+}
+
+.stat-box small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8994b0;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   PROFILE ACTIONS
+   ===================================================== */
+
+.profile-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.logout-btn {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border: 1px solid #673636;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #ff8a8a;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #351e25;
+}
+
+
+/* =====================================================
+   WALLET PAGE
+   ===================================================== */
+
+.wallet-page {
+    min-height: calc(100vh - 115px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 15px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #29365a,
+            #101526 65%
+        );
+}
+
+.wallet-card {
+    width: min(100%, 600px);
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #191f34;
+
+    border: 1px solid #303956;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.wallet-icon {
+    font-size: 58px;
+
+    margin-bottom: 10px;
+}
+
+.wallet-subtitle {
+    color: #929db7;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   WALLET BALANCE
+   ===================================================== */
+
+.balance-box {
+    margin: 25px 0;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #252e49,
+            #151b2e
+        );
+
+    border: 1px solid #303b59;
+}
+
+.balance-box > span {
+    display: block;
+
+    color: #9ba6c0;
+
+    font-size: 12px;
+}
+
+.balance-box strong {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 42px;
+}
+
+.balance-box small {
+    font-size: 13px;
+
+    color: #9ba6c0;
+}
+
+
+/* =====================================================
+   WALLET INFORMATION
+   ===================================================== */
+
+.wallet-info {
+    margin-bottom: 20px;
+}
+
+.wallet-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 13px 5px;
+
+    border-bottom: 1px solid #2d3650;
+
+    font-size: 13px;
+}
+
+.wallet-row span {
+    color: #b7c0d6;
+}
+
+.wallet-row strong {
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   WALLET NOTICE
+   ===================================================== */
+
+.wallet-notice {
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    text-align: left;
+
+    border-radius: 12px;
+
+    background: #11172a;
+
+    border: 1px solid #29334d;
+
+    color: #aeb8d0;
+}
+
+.wallet-notice strong {
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+.wallet-notice p {
+    margin-top: 7px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   WALLET ACTIONS
+   ===================================================== */
+
+.wallet-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* =====================================================
+   LEADERBOARD
+   ===================================================== */
+
+.leaderboard-page {
+    min-height: calc(100vh - 115px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 15px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #29365a,
+            #101526 65%
+        );
+}
+
+.leaderboard-card {
+    width: min(100%, 650px);
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #191f34;
+
+    border: 1px solid #303956;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.trophy {
+    font-size: 60px;
+
+    margin-bottom: 8px;
+}
+
+.leaderboard-subtitle {
+    color: #929db7;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   TOP THREE
+   ===================================================== */
+
+.top-three {
+    display: flex;
+
+    align-items: end;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 30px 0;
+}
+
+.rank {
+    width: 30%;
+
+    padding: 15px 8px;
+
+    border-radius: 14px;
+
+    background: #11172a;
+
+    border: 1px solid #303956;
+}
+
+.rank.first {
+    padding-top: 25px;
+}
+
+.rank-avatar {
+    font-size: 35px;
+
+    margin-bottom: 7px;
+}
+
+.rank strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.rank span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #8f9ab5;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   LEADERBOARD LIST
+   ===================================================== */
+
+.leaderboard-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    text-align: left;
+}
+
+.leader-row {
+    display: grid;
+
+    grid-template-columns:
+        50px 1fr auto;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    background: #11172a;
+
+    border: 1px solid transparent;
+}
+
+.leader-row:hover {
+    border-color: #303956;
+}
+
+.rank-number {
+    color: #9da8c0;
+
+    font-size: 13px;
+}
+
+.player-name {
+    font-weight: 600;
+
+    font-size: 13px;
+}
+
+.leader-row strong {
+    color: #ffca28;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   CURRENT PLAYER
+   ===================================================== */
+
+.current-player {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: #252e49;
+
+    font-size: 13px;
+}
+
+.current-player strong {
+    color: #ffca28;
+}
+
+
+/* =====================================================
+   LEADERBOARD ACTIONS
+   ===================================================== */
+
+.leaderboard-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .auth-page,
+    .profile-page,
+    .wallet-page,
+    .leaderboard-page {
+        padding: 20px 10px;
+    }
+
+    .auth-card,
+    .profile-card,
+    .wallet-card,
+    .leaderboard-card {
+        padding: 22px 15px;
+    }
+
+    .auth-card h1 {
+        font-size: 26px;
+    }
+
+    .stats-grid {
+        gap: 7px;
+    }
+
+    .stat-box {
+        padding: 13px 5px;
+    }
+
+    .stat-box strong {
+        font-size: 19px;
+    }
+
+    .top-three {
+        gap: 5px;
+    }
+
+    .rank {
+        width: 33%;
+        padding: 12px 4px;
+    }
+
+    .rank.first {
+        padding-top: 16px;
+    }
+
+    .rank-avatar {
+        font-size: 28px;
+    }
+
+    .rank strong {
+        font-size: 11px;
+    }
+
+    .rank span {
+        font-size: 9px;
+    }
+
+    .current-player {
+        font-size: 11px;
+    }
+
+    .balance-box strong {
+        font-size: 35px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL DEVICES
+   ===================================================== */
+
+@media (max-width: 360px) {
+
+    .auth-card,
+    .profile-card,
+    .wallet-card,
+    .leaderboard-card {
+        padding: 18px 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .stat-box strong {
+        font-size: 17px;
+    }
+
+    .stat-box small {
+        font-size: 9px;
+    }
+
+}

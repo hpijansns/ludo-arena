@@ -1,0 +1,672 @@
+/* =====================================================
+   LUDO ARENA - GAME STYLE
+   ===================================================== */
+
+/* ---------- GAME LAYOUT ---------- */
+
+.game-wrap {
+    min-height: calc(100vh - 115px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+
+    padding: 25px 15px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #29365a,
+            #101526 70%
+        );
+}
+
+
+/* ---------- GAME PANEL ---------- */
+
+.game-panel {
+    width: 250px;
+
+    padding: 20px;
+
+    background: #191f34;
+
+    border: 1px solid #303956;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.game-panel h2 {
+    margin-bottom: 18px;
+
+    text-align: center;
+
+    font-size: 22px;
+}
+
+
+/* ---------- TURN BOX ---------- */
+
+.turn-box {
+    padding: 13px;
+
+    border-radius: 12px;
+
+    background: #11172a;
+
+    text-align: center;
+}
+
+.turn-box span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8e99b4;
+
+    font-size: 12px;
+}
+
+.turn-box strong {
+    font-size: 17px;
+}
+
+
+/* ---------- DICE ---------- */
+
+.dice {
+    width: 100px;
+    height: 100px;
+
+    margin: 20px auto;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    color: #222;
+
+    font-size: 65px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+    user-select: none;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.dice.rolling {
+    animation: diceRoll 0.5s ease;
+}
+
+@keyframes diceRoll {
+
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    30% {
+        transform: rotate(90deg) scale(1.08);
+    }
+
+    60% {
+        transform: rotate(180deg) scale(0.95);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+
+}
+
+
+/* ---------- ROLL BUTTON ---------- */
+
+.roll-btn {
+    width: 100%;
+}
+
+.roll-btn:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* ---------- GAME MESSAGE ---------- */
+
+.game-message {
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 12px;
+
+    padding: 8px;
+
+    border-radius: 10px;
+
+    background: #11172a;
+
+    color: #b9c3dc;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+/* ---------- PLAYERS ---------- */
+
+.players-box {
+    margin-top: 20px;
+}
+
+.players-box h3 {
+    margin-bottom: 10px;
+
+    font-size: 15px;
+}
+
+#players {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.player {
+    padding: 9px 10px;
+
+    border-radius: 8px;
+
+    background: #11172a;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+.player.active {
+    background: #293655;
+
+    transform: translateX(3px);
+
+    box-shadow:
+        inset 3px 0 0 #ffca28;
+}
+
+.red-player {
+    border-left: 3px solid #e53935;
+}
+
+.green-player {
+    border-left: 3px solid #43a047;
+}
+
+.yellow-player {
+    border-left: 3px solid #fdd835;
+}
+
+.blue-player {
+    border-left: 3px solid #1e88e5;
+}
+
+
+/* ---------- RULES ---------- */
+
+.rules {
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #303956;
+}
+
+.rules h3 {
+    margin-bottom: 8px;
+
+    font-size: 15px;
+}
+
+.rules ul {
+    margin: 0;
+
+    padding-left: 18px;
+}
+
+.rules li {
+    margin-bottom: 6px;
+
+    color: #929db7;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   LUDO BOARD
+   ===================================================== */
+
+.board-section {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.board {
+    position: relative;
+
+    width: min(88vw, 600px);
+
+    aspect-ratio: 1 / 1;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(15, 1fr);
+
+    grid-template-rows:
+        repeat(15, 1fr);
+
+    overflow: hidden;
+
+    border: 8px solid #202020;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ---------- BOARD CELL ---------- */
+
+.cell {
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+
+    min-width: 0;
+    min-height: 0;
+
+    border: 1px solid #b8b8b8;
+
+    font-size: clamp(9px, 1.7vw, 17px);
+
+    user-select: none;
+}
+
+
+/* ---------- PATH ---------- */
+
+.cell.path {
+    background: #ffffff;
+}
+
+
+/* ---------- HOME AREAS ---------- */
+
+.cell.red {
+    background: #ef5350;
+}
+
+.cell.green {
+    background: #66bb6a;
+}
+
+.cell.yellow {
+    background: #ffee58;
+}
+
+.cell.blue {
+    background: #42a5f5;
+}
+
+
+/* ---------- CENTER ---------- */
+
+.cell.center {
+    background:
+        conic-gradient(
+            #ef5350 0deg 90deg,
+            #66bb6a 90deg 180deg,
+            #ffee58 180deg 270deg,
+            #42a5f5 270deg 360deg
+        );
+}
+
+
+/* ---------- SAFE CELLS ---------- */
+
+.cell.safe::after {
+    content: "★";
+
+    position: absolute;
+
+    font-size: clamp(8px, 1.5vw, 15px);
+
+    color: #555;
+
+    opacity: 0.8;
+}
+
+
+/* ---------- TOKENS ---------- */
+
+.token {
+    position: absolute;
+
+    width: 68%;
+    height: 68%;
+
+    border-radius: 50%;
+
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        0 3px 7px rgba(0, 0, 0, 0.45);
+
+    z-index: 5;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.token:hover {
+    transform: scale(1.12);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ---------- TOKEN COLORS ---------- */
+
+.t-red {
+    background: #d32f2f;
+}
+
+.t-green {
+    background: #2e7d32;
+}
+
+.t-yellow {
+    background: #f9a825;
+}
+
+.t-blue {
+    background: #1565c0;
+}
+
+
+/* ---------- SELECTABLE TOKEN ---------- */
+
+.token.movable {
+    animation:
+        tokenPulse 0.8s infinite alternate;
+
+    cursor: pointer;
+}
+
+@keyframes tokenPulse {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* ---------- TOKEN MOVING ---------- */
+
+.token.moving {
+    animation:
+        tokenMove 0.35s ease;
+}
+
+@keyframes tokenMove {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* ---------- HOME TOKEN SLOT ---------- */
+
+.token-slot {
+    position: relative;
+
+    width: 72%;
+    height: 72%;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 2px solid rgba(0, 0, 0, 0.15);
+
+    display: grid;
+
+    place-items: center;
+}
+
+
+/* ---------- MOBILE CONTROLS ---------- */
+
+.mobile-controls {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 12px;
+}
+
+.mobile-controls .btn {
+    width: 100%;
+}
+
+
+/* =====================================================
+   RESPONSIVE GAME
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .game-wrap {
+        gap: 18px;
+    }
+
+    .game-panel {
+        width: 220px;
+
+        padding: 15px;
+    }
+
+    .dice {
+        width: 80px;
+        height: 80px;
+
+        font-size: 52px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .game-wrap {
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 12px 8px;
+    }
+
+    .game-panel {
+        width: min(600px, 94vw);
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 10px;
+
+        padding: 14px;
+    }
+
+    .game-panel h2,
+    .players-box,
+    .rules,
+    .game-message {
+        grid-column: 1 / -1;
+    }
+
+    .turn-box {
+        grid-column: 1;
+    }
+
+    .dice {
+        width: 65px;
+        height: 65px;
+
+        margin: 0 auto;
+
+        font-size: 42px;
+    }
+
+    .roll-btn {
+        grid-column: 2;
+
+        align-self: center;
+    }
+
+    .players-box {
+        margin-top: 5px;
+    }
+
+    #players {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .rules {
+        display: none;
+    }
+
+    .mobile-controls {
+        display: none;
+    }
+
+    .board {
+        width: min(96vw, 600px);
+
+        border-width: 5px;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .game-wrap {
+        padding: 8px 5px;
+    }
+
+    .game-panel {
+        width: 96vw;
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .game-panel h2 {
+        font-size: 18px;
+    }
+
+    .turn-box strong {
+        font-size: 14px;
+    }
+
+    .dice {
+        width: 58px;
+        height: 58px;
+
+        font-size: 36px;
+    }
+
+    .roll-btn {
+        min-height: 40px;
+
+        padding: 8px;
+
+        font-size: 13px;
+    }
+
+    .game-message {
+        font-size: 11px;
+    }
+
+    .player {
+        font-size: 11px;
+
+        padding: 7px;
+    }
+
+    .board {
+        width: 97vw;
+
+        border-width: 4px;
+
+        border-radius: 8px;
+    }
+
+}
