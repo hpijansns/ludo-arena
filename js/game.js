@@ -1413,3 +1413,216 @@
 
             event.target.closest(
                 ".ludo-toke
+        ".ludo-token"
+    );
+
+
+    if (!token) {
+
+        return;
+
+    }
+
+
+    if (
+        rolling ||
+        gameOver ||
+        diceValue === 0
+    ) {
+
+        return;
+
+    }
+
+
+    const player =
+
+        Number(
+            token.dataset.player
+        );
+
+
+    const tokenIndex =
+
+        Number(
+            token.dataset.token
+        );
+
+
+    if (
+        player !== currentPlayer
+    ) {
+
+        return;
+
+    }
+
+
+    const position =
+
+        tokens[player][tokenIndex];
+
+
+    /*
+     * HOME TOKEN
+     */
+
+    if (
+        position === -1 &&
+        diceValue !== 6
+    ) {
+
+        showMessage(
+            "❌ You need a 6 to bring the token out."
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * TOKEN CANNOT PASS FINISH
+     */
+
+    if (
+
+        position >= 0 &&
+
+        position + diceValue > 56
+
+    ) {
+
+        showMessage(
+            "❌ This token cannot move."
+        );
+
+        return;
+
+    }
+
+
+    rolling = true;
+
+    disableRoll();
+
+
+    moveToken(
+
+        player,
+
+        tokenIndex,
+
+        diceValue
+
+    );
+
+}
+
+
+/* =====================================================
+   SHOW DICE
+   ===================================================== */
+
+function showDice(value) {
+
+    if (!dice) {
+
+        return;
+
+    }
+
+
+    const faces = {
+
+        1: "⚀",
+        2: "⚁",
+        3: "⚂",
+        4: "⚃",
+        5: "⚄",
+        6: "⚅"
+
+    };
+
+
+    dice.textContent =
+
+        faces[value] || "🎲";
+
+}
+
+
+/* =====================================================
+   SHOW MESSAGE
+   ===================================================== */
+
+function showMessage(text) {
+
+    if (!messageElement) {
+
+        return;
+
+    }
+
+
+    messageElement.textContent = text;
+
+}
+
+
+/* =====================================================
+   ENABLE ROLL
+   ===================================================== */
+
+function enableRoll() {
+
+    if (gameOver) {
+
+        return;
+
+    }
+
+
+    if (rollButton) {
+
+        rollButton.disabled = false;
+
+    }
+
+
+    if (mobileRollButton) {
+
+        mobileRollButton.disabled = false;
+
+    }
+
+}
+
+
+/* =====================================================
+   DISABLE ROLL
+   ===================================================== */
+
+function disableRoll() {
+
+    if (rollButton) {
+
+        rollButton.disabled = true;
+
+    }
+
+
+    if (mobileRollButton) {
+
+        mobileRollButton.disabled = true;
+
+    }
+
+}
+
+
+/* =====================================================
+   END GAME CONTROLLER
+   ===================================================== */
+
+})();
