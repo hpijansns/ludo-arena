@@ -1,339 +1,346 @@
-/* =====================================================
-   LUDO ARENA - GAME STYLE
-   ===================================================== */
+/* =========================================================
+   LUDO ARENA — COMPLETE GAME CSS
+   Mobile + Desktop Responsive
+   ========================================================= */
 
-/* ---------- GAME LAYOUT ---------- */
-
-.game-wrap {
-    min-height: calc(100vh - 115px);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 30px;
-
-    padding: 25px 15px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #29365a,
-            #101526 70%
-        );
+* {
+    box-sizing: border-box;
 }
 
+.game-wrap {
+    width: 100%;
+    min-height: calc(100vh - 110px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    padding: 22px 14px 35px;
+    background:
+        radial-gradient(circle at 50% 0%, #29365a 0%, #151b31 48%, #0b1020 100%);
+    color: #ffffff !important;
+}
 
-/* ---------- GAME PANEL ---------- */
+/* =========================================================
+   GAME PANEL
+   ========================================================= */
 
 .game-panel {
-    width: 250px;
-
+    width: 260px;
+    flex: 0 0 260px;
     padding: 20px;
+    background: #191f34 !important;
+    color: #ffffff !important;
+    border: 1px solid #394563;
+    border-radius: 20px;
+    box-shadow: 0 18px 50px rgba(0,0,0,.40);
+}
 
-    background: #191f34;
-
-    border: 1px solid #303956;
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.3);
+.game-panel h2,
+.game-panel h3,
+.game-panel p,
+.game-panel strong,
+.game-panel span {
+    color: inherit;
 }
 
 .game-panel h2 {
-    margin-bottom: 18px;
-
+    margin: 0 0 18px;
     text-align: center;
-
     font-size: 22px;
+    font-weight: 800;
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,.4);
 }
 
-
-/* ---------- TURN BOX ---------- */
+/* =========================================================
+   TURN
+   ========================================================= */
 
 .turn-box {
-    padding: 13px;
-
-    border-radius: 12px;
-
-    background: #11172a;
-
+    width: 100%;
+    min-height: 82px;
+    padding: 14px;
+    border-radius: 14px;
+    background: #0d1427 !important;
     text-align: center;
+    color: #ffffff !important;
 }
 
 .turn-box span {
     display: block;
-
-    margin-bottom: 5px;
-
-    color: #8e99b4;
-
-    font-size: 12px;
+    margin-bottom: 7px;
+    color: #aeb9d4 !important;
+    font-size: 13px;
 }
 
 .turn-box strong {
-    font-size: 17px;
+    display: block;
+    color: #ffffff !important;
+    font-size: 18px;
+    font-weight: 800;
 }
 
-
-/* ---------- DICE ---------- */
+/* =========================================================
+   DICE
+   ========================================================= */
 
 .dice {
-    width: 100px;
-    height: 100px;
-
+    width: 105px;
+    height: 105px;
     margin: 20px auto;
-
     display: grid;
     place-items: center;
-
-    border-radius: 20px;
-
-    background: #ffffff;
-
-    color: #222;
-
-    font-size: 65px;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3);
-
+    border-radius: 22px;
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 64px;
+    line-height: 1;
+    box-shadow: 0 12px 32px rgba(0,0,0,.35);
     user-select: none;
-
-    transition:
-        transform 0.2s ease;
+    transition: transform .2s ease;
 }
 
 .dice.rolling {
-    animation: diceRoll 0.5s ease;
+    animation: diceRoll .5s ease;
 }
 
 @keyframes diceRoll {
-
     0% {
         transform: rotate(0deg) scale(1);
     }
-
     30% {
         transform: rotate(90deg) scale(1.08);
     }
-
     60% {
-        transform: rotate(180deg) scale(0.95);
+        transform: rotate(180deg) scale(.95);
     }
-
     100% {
         transform: rotate(360deg) scale(1);
     }
-
 }
 
-
-/* ---------- ROLL BUTTON ---------- */
+/* =========================================================
+   ROLL BUTTON
+   ========================================================= */
 
 .roll-btn {
     width: 100%;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    border: 0;
+    border-radius: 15px;
+
+    background: #ffffff !important;
+    color: #111827 !important;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 22px rgba(0,0,0,.25);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.roll-btn:hover {
+    transform: translateY(-2px);
+}
+
+.roll-btn:active {
+    transform: translateY(1px);
 }
 
 .roll-btn:disabled {
-    opacity: 0.5;
-
+    opacity: .5;
     cursor: not-allowed;
-
     transform: none;
-
     box-shadow: none;
 }
 
-
-/* ---------- GAME MESSAGE ---------- */
+/* =========================================================
+   MESSAGE
+   ========================================================= */
 
 .game-message {
-    min-height: 42px;
+    width: 100%;
+    min-height: 52px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    margin-top: 12px;
+    margin-top: 14px;
+    padding: 10px 12px;
 
-    padding: 8px;
+    border-radius: 12px;
 
-    border-radius: 10px;
-
-    background: #11172a;
-
-    color: #b9c3dc;
+    background: #0d1427 !important;
+    color: #e8edff !important;
 
     text-align: center;
-
-    font-size: 13px;
-
+    font-size: 14px;
     line-height: 1.4;
 }
 
-
-/* ---------- PLAYERS ---------- */
+/* =========================================================
+   PLAYERS
+   ========================================================= */
 
 .players-box {
     margin-top: 20px;
+    color: #ffffff !important;
 }
 
 .players-box h3 {
-    margin-bottom: 10px;
-
-    font-size: 15px;
+    margin: 0 0 10px;
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 800;
 }
 
 #players {
     display: flex;
-
     flex-direction: column;
-
-    gap: 7px;
+    gap: 8px;
 }
 
 .player {
-    padding: 9px 10px;
+    min-height: 42px;
 
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
 
-    background: #11172a;
+    padding: 9px 11px;
+
+    border-radius: 10px;
+
+    background: #0d1427 !important;
+    color: #f5f7ff !important;
 
     font-size: 13px;
+    font-weight: 600;
 
-    transition: 0.2s;
+    transition: .2s ease;
 }
 
 .player.active {
-    background: #293655;
-
+    background: #293655 !important;
+    color: #ffffff !important;
     transform: translateX(3px);
 
     box-shadow:
-        inset 3px 0 0 #ffca28;
+        inset 4px 0 0 #ffca28,
+        0 3px 12px rgba(0,0,0,.18);
 }
 
 .red-player {
-    border-left: 3px solid #e53935;
+    border-left: 4px solid #ef4444;
 }
 
 .green-player {
-    border-left: 3px solid #43a047;
+    border-left: 4px solid #4ade80;
 }
 
 .yellow-player {
-    border-left: 3px solid #fdd835;
+    border-left: 4px solid #facc15;
 }
 
 .blue-player {
-    border-left: 3px solid #1e88e5;
+    border-left: 4px solid #38bdf8;
 }
 
-
-/* ---------- RULES ---------- */
+/* =========================================================
+   RULES
+   ========================================================= */
 
 .rules {
     margin-top: 20px;
-
     padding-top: 15px;
-
-    border-top: 1px solid #303956;
+    border-top: 1px solid #394563;
+    color: #ffffff !important;
 }
 
 .rules h3 {
-    margin-bottom: 8px;
-
+    margin: 0 0 9px;
+    color: #ffffff !important;
     font-size: 15px;
 }
 
 .rules ul {
     margin: 0;
-
     padding-left: 18px;
 }
 
 .rules li {
     margin-bottom: 6px;
-
-    color: #929db7;
-
+    color: #aeb9d4 !important;
     font-size: 11px;
-
-    line-height: 1.4;
+    line-height: 1.45;
 }
 
-
-/* =====================================================
-   LUDO BOARD
-   ===================================================== */
+/* =========================================================
+   BOARD SECTION
+   ========================================================= */
 
 .board-section {
+    width: min(600px, 100%);
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
+    justify-content: flex-start;
 }
 
 .board {
     position: relative;
 
     width: min(88vw, 600px);
+    max-width: 600px;
 
     aspect-ratio: 1 / 1;
 
     display: grid;
 
-    grid-template-columns:
-        repeat(15, 1fr);
-
-    grid-template-rows:
-        repeat(15, 1fr);
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
 
     overflow: hidden;
 
-    border: 8px solid #202020;
-
+    border: 7px solid #202020;
     border-radius: 14px;
 
     background: #ffffff;
 
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.45);
+        0 22px 65px rgba(0,0,0,.48);
 }
 
-
-/* ---------- BOARD CELL ---------- */
+/* =========================================================
+   BOARD CELLS
+   ========================================================= */
 
 .cell {
     position: relative;
 
-    display: grid;
-
-    place-items: center;
-
     min-width: 0;
     min-height: 0;
 
+    display: grid;
+    place-items: center;
+
     border: 1px solid #b8b8b8;
 
-    font-size: clamp(9px, 1.7vw, 17px);
+    font-size: clamp(8px, 1.6vw, 17px);
 
     user-select: none;
 }
 
-
-/* ---------- PATH ---------- */
-
 .cell.path {
     background: #ffffff;
 }
-
-
-/* ---------- HOME AREAS ---------- */
 
 .cell.red {
     background: #ef5350;
@@ -351,9 +358,6 @@
     background: #42a5f5;
 }
 
-
-/* ---------- CENTER ---------- */
-
 .cell.center {
     background:
         conic-gradient(
@@ -364,23 +368,26 @@
         );
 }
 
-
-/* ---------- SAFE CELLS ---------- */
+/* =========================================================
+   SAFE CELLS
+   ========================================================= */
 
 .cell.safe::after {
     content: "★";
 
     position: absolute;
 
+    color: #555555;
+    opacity: .8;
+
     font-size: clamp(8px, 1.5vw, 15px);
 
-    color: #555;
-
-    opacity: 0.8;
+    pointer-events: none;
 }
 
-
-/* ---------- TOKENS ---------- */
+/* =========================================================
+   TOKENS
+   ========================================================= */
 
 .token {
     position: absolute;
@@ -393,26 +400,23 @@
     border: 3px solid #ffffff;
 
     box-shadow:
-        0 3px 7px rgba(0, 0, 0, 0.45);
+        0 3px 8px rgba(0,0,0,.45);
 
     z-index: 5;
 
     cursor: pointer;
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
 .token:hover {
     transform: scale(1.12);
 
     box-shadow:
-        0 5px 12px rgba(0, 0, 0, 0.5);
+        0 5px 14px rgba(0,0,0,.55);
 }
-
-
-/* ---------- TOKEN COLORS ---------- */
 
 .t-red {
     background: #d32f2f;
@@ -430,18 +434,16 @@
     background: #1565c0;
 }
 
-
-/* ---------- SELECTABLE TOKEN ---------- */
+/* =========================================================
+   MOVABLE TOKEN
+   ========================================================= */
 
 .token.movable {
-    animation:
-        tokenPulse 0.8s infinite alternate;
-
+    animation: tokenPulse .8s infinite alternate;
     cursor: pointer;
 }
 
 @keyframes tokenPulse {
-
     from {
         transform: scale(1);
     }
@@ -449,19 +451,13 @@
     to {
         transform: scale(1.15);
     }
-
 }
 
-
-/* ---------- TOKEN MOVING ---------- */
-
 .token.moving {
-    animation:
-        tokenMove 0.35s ease;
+    animation: tokenMove .35s ease;
 }
 
 @keyframes tokenMove {
-
     0% {
         transform: scale(1);
     }
@@ -473,11 +469,11 @@
     100% {
         transform: scale(1);
     }
-
 }
 
-
-/* ---------- HOME TOKEN SLOT ---------- */
+/* =========================================================
+   TOKEN SLOT
+   ========================================================= */
 
 .token-slot {
     position: relative;
@@ -485,25 +481,24 @@
     width: 72%;
     height: 72%;
 
+    display: grid;
+    place-items: center;
+
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255,255,255,.78);
 
-    border: 2px solid rgba(0, 0, 0, 0.15);
-
-    display: grid;
-
-    place-items: center;
+    border: 2px solid rgba(0,0,0,.15);
 }
 
-
-/* ---------- MOBILE CONTROLS ---------- */
+/* =========================================================
+   MOBILE CONTROLS
+   ========================================================= */
 
 .mobile-controls {
     display: none;
 
     width: 100%;
-
     margin-top: 12px;
 }
 
@@ -511,242 +506,124 @@
     width: 100%;
 }
 
-
-/* =====================================================
-   RESPONSIVE GAME
-   ===================================================== */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
 
     .game-wrap {
-        gap: 18px;
+        gap: 16px;
     }
 
     .game-panel {
-        width: 220px;
-
+        width: 225px;
+        flex-basis: 225px;
         padding: 15px;
     }
 
     .dice {
-        width: 80px;
-        height: 80px;
-
-        font-size: 52px;
+        width: 82px;
+        height: 82px;
+        font-size: 50px;
     }
 
+    .board {
+        width: min(64vw, 520px);
+    }
 }
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
 
     .game-wrap {
-        flex-direction: column;
+        width: 100%;
+        min-height: auto;
 
+        flex-direction: column;
         align-items: center;
 
-        padding: 12px 8px;
+        gap: 12px;
+
+        padding: 10px 6px 30px;
     }
 
     .game-panel {
-        width: min(600px, 94vw);
+        width: min(96vw, 600px);
+        flex: none;
 
         display: grid;
-
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
 
         gap: 10px;
 
         padding: 14px;
+
+        border-radius: 18px;
     }
 
-    .game-panel h2,
-    .players-box,
-    .rules,
-    .game-message {
+    .game-panel h2 {
         grid-column: 1 / -1;
+
+        margin-bottom: 2px;
+
+        font-size: 20px;
     }
 
     .turn-box {
         grid-column: 1;
+        min-height: 76px;
     }
 
     .dice {
-        width: 65px;
-        height: 65px;
+        width: 68px;
+        height: 68px;
 
         margin: 0 auto;
 
-        font-size: 42px;
+        font-size: 43px;
     }
 
     .roll-btn {
         grid-column: 2;
 
+        min-height: 48px;
+
         align-self: center;
+
+        font-size: 14px;
+    }
+
+    .game-message {
+        grid-column: 1 / -1;
+
+        margin-top: 2px;
+
+        min-height: 48px;
     }
 
     .players-box {
-        margin-top: 5px;
+        grid-column: 1 / -1;
+
+        margin-top: 2px;
     }
 
     #players {
         display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
 
-        grid-template-columns:
-            repeat(2, 1fr);
+    .player {
+        min-height: 40px;
+        font-size: 12px;
     }
 
     .rules {
         display: none;
-    }
-
-    .mobile-controls {
-        display: none;
-    }
-
-    .board {
-        width: min(96vw, 600px);
-
-        border-width: 5px;
-    }
-
-}
-
-
-@media (max-width: 430px) {
-
-    .game-wrap {
-        padding: 8px 5px;
-    }
-
-    .game-panel {
-        width: 96vw;
-
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-    .game-panel h2 {
-        font-size: 18px;
-    }
-
-    .turn-box strong {
-        font-size: 14px;
-    }
-
-    .dice {
-        width: 58px;
-        height: 58px;
-
-        font-size: 36px;
-    }
-
-    .roll-btn {
-        min-height: 40px;
-
-        padding: 8px;
-
-        font-size: 13px;
-    }
-
-    .game-message {
-        font-size: 11px;
-    }
-
-    .player {
-        font-size: 11px;
-
-        padding: 7px;
-    }
-
-    .board {
-        width: 97vw;
-
-        border-width: 4px;
-
-        border-radius: 8px;
-    }
-
-}
-/* =====================================================
-   FINAL VISIBILITY & MOBILE FIX
-   ===================================================== */
-
-.game-wrap {
-    color: #ffffff;
-}
-
-.game-panel,
-.game-panel h2,
-.game-panel h3,
-.turn-box,
-.turn-box strong,
-.players-box,
-.player,
-.rules {
-    color: #ffffff;
-}
-
-.game-panel h2 {
-    color: #ffffff;
-}
-
-.turn-box span {
-    color: #aeb9d4;
-}
-
-.turn-box strong {
-    color: #ffffff;
-}
-
-.players-box h3,
-.rules h3 {
-    color: #ffffff;
-}
-
-.player {
-    color: #f5f7ff;
-}
-
-.player.red-player {
-    color: #ffb3b3;
-}
-
-.player.green-player {
-    color: #b9f6c5;
-}
-
-.player.yellow-player {
-    color: #fff3a6;
-}
-
-.player.blue-player {
-    color: #a9d7ff;
-}
-
-.game-message {
-    color: #e8edff;
-}
-
-/* Roll button clearly visible */
-.roll-btn {
-    color: #111827;
-    background: #ffffff;
-    font-weight: 700;
-}
-
-/* Game title */
-.game-panel h2 {
-    text-shadow: 0 2px 8px rgba(0,0,0,.35);
-}
-
-/* Mobile board spacing */
-@media (max-width: 700px) {
-    .game-wrap {
-        gap: 12px;
-        padding: 10px 6px 25px;
     }
 
     .board-section {
@@ -756,16 +633,74 @@
     .board {
         width: 96vw;
         max-width: 600px;
+
+        border-width: 4px;
+        border-radius: 9px;
     }
 }
 
-/* Very small phones */
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
 @media (max-width: 430px) {
+
+    .game-wrap {
+        padding: 8px 4px 25px;
+    }
+
     .game-panel {
         width: 96vw;
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .game-panel h2 {
+        font-size: 18px;
+    }
+
+    .turn-box {
+        min-height: 68px;
+        padding: 11px;
+    }
+
+    .turn-box span {
+        font-size: 11px;
+    }
+
+    .turn-box strong {
+        font-size: 14px;
+    }
+
+    .dice {
+        width: 58px;
+        height: 58px;
+        font-size: 35px;
+    }
+
+    .roll-btn {
+        min-height: 42px;
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    .game-message {
+        font-size: 11px;
+    }
+
+    .players-box h3 {
+        font-size: 14px;
+    }
+
+    .player {
+        min-height: 37px;
+        padding: 7px;
+        font-size: 11px;
     }
 
     .board {
-        width: 96vw;
+        width: 97vw;
+        border-width: 3px;
+        border-radius: 7px;
     }
 }
